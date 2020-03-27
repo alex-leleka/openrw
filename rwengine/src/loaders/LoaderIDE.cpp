@@ -64,6 +64,9 @@ bool LoaderIDE::load(std::istream& str, const PedStatsList& stats) {
             line.erase(remove_if(line.begin(), line.end(), isspace),
                        line.end());
 
+            if (line.empty()) {
+                continue;
+            }
             std::stringstream strstream(line);
             std::string buff;
 
